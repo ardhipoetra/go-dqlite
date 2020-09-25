@@ -11,6 +11,7 @@ import (
 	"os/signal"
 	"path/filepath"
 	"strings"
+	"strconv"
 
 	"github.com/canonical/go-dqlite/app"
 	"github.com/canonical/go-dqlite/client"
@@ -25,6 +26,8 @@ func main() {
 	var join *[]string
 	var dir string
 	var verbose bool
+
+	var emmc string
 
 	cmd := &cobra.Command{
 		Use:   "dqlite-demo",
@@ -43,7 +46,13 @@ Complete documentation is available at https://github.com/canonical/go-dqlite`,
 				}
 				log.Printf(fmt.Sprintf("%s: %s: %s\n", api, l.String(), format), a...)
 			}
-			app, err := app.New(dir, app.WithAddress(db), app.WithCluster(*join), app.WithLogFunc(logFunc))
+
+			host, port, err := net.SplitHostPort(emmc)
+			if err != nil {
+				return err
+			}
+
+			app, err := app.New(dir, app.WithAddress(db), app.WithCluster(*join), app.WithLogFunc(logFunc), host, strconv.Atoi(port))
 			if err != nil {
 				return err
 			}
@@ -111,6 +120,7 @@ Complete documentation is available at https://github.com/canonical/go-dqlite`,
 
 	flags := cmd.Flags()
 	flags.StringVarP(&api, "api", "a", "", "address used to expose the demo API")
+	flags.StringVarP(&emmc, "emmc", "e", "", "address used on emmc server")
 	flags.StringVarP(&db, "db", "d", "", "address used for internal database replication")
 	join = flags.StringSliceP("join", "j", nil, "database addresses of existing nodes")
 	flags.StringVarP(&dir, "dir", "D", "/tmp/dqlite-demo", "data directory")
@@ -118,6 +128,7 @@ Complete documentation is available at https://github.com/canonical/go-dqlite`,
 
 	cmd.MarkFlagRequired("api")
 	cmd.MarkFlagRequired("db")
+	cmd.MarkFlagRequired("emmc")
 
 	if err := cmd.Execute(); err != nil {
 		os.Exit(1)
