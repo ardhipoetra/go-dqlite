@@ -7,7 +7,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/canonical/go-dqlite/client"
+	"github.com/ardhipoetra/go-dqlite/client"
 )
 
 // Option can be used to tweak app parameters.

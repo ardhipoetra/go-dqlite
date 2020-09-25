@@ -25,8 +25,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/canonical/go-dqlite/client"
-	"github.com/canonical/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/client"
+	"github.com/ardhipoetra/go-dqlite/internal/protocol"
 )
 
 // Driver perform queries against a dqlite server.

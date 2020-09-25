@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/canonical/go-dqlite/client"
-	"github.com/canonical/go-dqlite/driver"
+	"github.com/ardhipoetra/go-dqlite/client"
+	"github.com/ardhipoetra/go-dqlite/driver"
 )
 
 // Shell can be used to implement interactive prompts for inspecting a dqlite

@@ -3,7 +3,7 @@ package logging_test
 import (
 	"testing"
 
-	"github.com/canonical/go-dqlite/internal/logging"
+	"github.com/ardhipoetra/go-dqlite/internal/logging"
 	"github.com/stretchr/testify/assert"
 )
 

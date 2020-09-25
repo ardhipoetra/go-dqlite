@@ -11,7 +11,7 @@ import (
 	"github.com/Rican7/retry"
 	"github.com/Rican7/retry/backoff"
 	"github.com/Rican7/retry/strategy"
-	"github.com/canonical/go-dqlite/internal/logging"
+	"github.com/ardhipoetra/go-dqlite/internal/logging"
 	"github.com/pkg/errors"
 )
 

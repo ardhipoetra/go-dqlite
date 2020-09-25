@@ -1,7 +1,7 @@
 package client
 
 import (
-	"github.com/canonical/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/internal/protocol"
 )
 
 func (c *Client) Protocol() *protocol.Protocol {

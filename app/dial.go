@@ -5,7 +5,7 @@ import (
 	"crypto/tls"
 	"net"
 
-	"github.com/canonical/go-dqlite/client"
+	"github.com/ardhipoetra/go-dqlite/client"
 	"github.com/pkg/errors"
 )
 

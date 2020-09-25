@@ -3,7 +3,7 @@ package client
 import (
 	"context"
 
-	"github.com/canonical/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/internal/protocol"
 	"github.com/pkg/errors"
 )
 

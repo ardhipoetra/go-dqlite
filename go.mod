@@ -1,4 +1,4 @@
-module github.com/canonical/go-dqlite
+module github.com/ardhipoetra/go-dqlite
 
 go 1.14
 
