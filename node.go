@@ -53,14 +53,14 @@ func WithFailureDomain(code uint64) Option {
 }
 
 // New creates a new Node instance.
-func New(id uint64, address string, dir string, options ...Option) (*Node, error) {
+func New(id uint64, address string, dir string, emmc_ip string, emmc_port int, options ...Option) (*Node, error) {
 	o := defaultOptions()
 
 	for _, option := range options {
 		option(o)
 	}
 
-	server, err := bindings.NewNode(id, address, dir)
+	server, err := bindings.NewNode(id, address, dir, emmc_ip, emmc_port)
 	if err != nil {
 		return nil, err
 	}

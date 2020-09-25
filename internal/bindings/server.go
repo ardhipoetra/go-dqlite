@@ -86,7 +86,7 @@ type Node C.dqlite_node
 // Initializes state.
 func init() {
 	// FIXME: ignore SIGPIPE, see https://github.com/joyent/libuv/issues/1254
-	C.signal(C.SIGPIPE, C.SIG_IGN)
+	// C.signal(C.SIGPIPE, C.SIG_IGN) //RD: I got error 
 }
 
 func ConfigSingleThread() error {
@@ -104,7 +104,7 @@ func ConfigMultiThread() error {
 }
 
 // NewNode creates a new Node instance.
-func NewNode(id uint64, address string, dir string) (*Node, error) {
+func NewNode(id uint64, address string, dir string, emmc_ip string, emmc_port int) (*Node, error) {
 	var server *C.dqlite_node
 	cid := C.dqlite_node_id(id)
 
@@ -114,7 +114,12 @@ func NewNode(id uint64, address string, dir string) (*Node, error) {
 	cdir := C.CString(dir)
 	defer C.free(unsafe.Pointer(cdir))
 
-	if rc := C.dqlite_node_create(cid, caddress, cdir, &server); rc != 0 {
+	cemmc_ip := C.CString(emmc_ip)
+	defer C.free(unsafe.Pointer(cemmc_ip))
+
+	cemmc_port := C.int(emmc_port)
+
+	if rc := C.dqlite_node_create_wemmc(cid, caddress, cdir, &server, cemmc_ip, cemmc_port); rc != 0 {
 		errmsg := C.GoString(C.dqlite_node_errmsg(server))
 		return nil, fmt.Errorf("%s", errmsg)
 	}
@@ -146,7 +151,7 @@ func (s *Node) SetBindAddress(address string) error {
 
 func (s *Node) SetNetworkLatency(nanoseconds uint64) error {
 	server := (*C.dqlite_node)(unsafe.Pointer(s))
-	cnanoseconds := C.nanoseconds_t(nanoseconds)
+	cnanoseconds := C.ulonglong(nanoseconds)
 	if rc := C.dqlite_node_set_network_latency(server, cnanoseconds); rc != 0 {
 		return fmt.Errorf("failed to set network latency")
 	}
@@ -155,7 +160,7 @@ func (s *Node) SetNetworkLatency(nanoseconds uint64) error {
 
 func (s *Node) SetFailureDomain(code uint64) error {
 	server := (*C.dqlite_node)(unsafe.Pointer(s))
-	ccode := C.failure_domain_t(code)
+	ccode := C.ulonglong(code)
 	if rc := C.dqlite_node_set_failure_domain(server, ccode); rc != 0 {
 		return fmt.Errorf("set failure domain: %d", rc)
 	}
