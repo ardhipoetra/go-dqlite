@@ -150,7 +150,7 @@ func GenerateID(address string) uint64 {
 // It forces appending a new configuration to the raft log stored in the given
 // directory, effectively replacing the current configuration.
 func ReconfigureMembership(dir string, cluster []NodeInfo) error {
-	server, err := bindings.NewNode(1, "1", dir)
+	server, err := bindings.NewNode(1, "1", dir, "127.0.0.1", 8889)
 	if err != nil {
 		return err
 	}
