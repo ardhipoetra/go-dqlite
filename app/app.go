@@ -43,7 +43,7 @@ type App struct {
 }
 
 // New creates a new application node.
-func New(dir string, options ...Option) (app *App, err error) {
+func New(dir string, emmc_ip string, emmc_port int, options ...Option) (app *App, err error) {
 	o := defaultOptions()
 	for _, option := range options {
 		option(o)
@@ -161,7 +161,7 @@ func New(dir string, options ...Option) (app *App, err error) {
 		nodeDial = client.DefaultDialFunc
 	}
 	node, err := dqlite.New(
-		info.ID, info.Address, dir,
+		info.ID, info.Address, dir, emmc_ip, emmc_port,
 		dqlite.WithBindAddress(nodeBindAddress),
 		dqlite.WithDialFunc(nodeDial),
 		dqlite.WithFailureDomain(o.FailureDomain),
