@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	dqlite "github.com/canonical/go-dqlite"
-	"github.com/canonical/go-dqlite/client"
+	dqlite "github.com/ardhipoetra/go-dqlite"
+	"github.com/ardhipoetra/go-dqlite/client"
 	"github.com/stretchr/testify/require"
 )
 

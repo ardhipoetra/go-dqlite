@@ -10,9 +10,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/canonical/go-dqlite/app"
-	"github.com/canonical/go-dqlite/client"
-	"github.com/canonical/go-dqlite/internal/shell"
+	"github.com/ardhipoetra/go-dqlite/app"
+	"github.com/ardhipoetra/go-dqlite/client"
+	"github.com/ardhipoetra/go-dqlite/internal/shell"
 	"github.com/peterh/liner"
 	"github.com/spf13/cobra"
 )

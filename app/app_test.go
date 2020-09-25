@@ -13,8 +13,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/canonical/go-dqlite/app"
-	"github.com/canonical/go-dqlite/client"
+	"github.com/ardhipoetra/go-dqlite/app"
+	"github.com/ardhipoetra/go-dqlite/client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

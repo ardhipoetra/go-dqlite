@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/canonical/go-dqlite"
-	"github.com/canonical/go-dqlite/client"
-	"github.com/canonical/go-dqlite/driver"
+	"github.com/ardhipoetra/go-dqlite"
+	"github.com/ardhipoetra/go-dqlite/client"
+	"github.com/ardhipoetra/go-dqlite/driver"
 	"github.com/pkg/errors"
 )
 
