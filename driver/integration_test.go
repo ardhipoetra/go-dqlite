@@ -11,7 +11,7 @@ import (
 	dqlite "github.com/ardhipoetra/go-dqlite"
 	"github.com/ardhipoetra/go-dqlite/client"
 	"github.com/ardhipoetra/go-dqlite/driver"
-	"github.com/ardhipoetra/go-dqlite/internal/logging"
+	"github.com/ardhipoetra/go-dqlite/logging"
 	"github.com/mattn/go-sqlite3"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

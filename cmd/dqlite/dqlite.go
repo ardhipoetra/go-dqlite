@@ -12,7 +12,7 @@ import (
 
 	"github.com/ardhipoetra/go-dqlite/app"
 	"github.com/ardhipoetra/go-dqlite/client"
-	"github.com/ardhipoetra/go-dqlite/internal/shell"
+	"github.com/ardhipoetra/go-dqlite/shell"
 	"github.com/peterh/liner"
 	"github.com/spf13/cobra"
 )

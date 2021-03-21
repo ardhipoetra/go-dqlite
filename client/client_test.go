@@ -10,7 +10,7 @@ import (
 
 	dqlite "github.com/ardhipoetra/go-dqlite"
 	"github.com/ardhipoetra/go-dqlite/client"
-	"github.com/ardhipoetra/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/protocol"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -1,7 +1,7 @@
 package client
 
 import (
-	"github.com/ardhipoetra/go-dqlite/internal/logging"
+	"github.com/ardhipoetra/go-dqlite/logging"
 )
 
 // LogFunc is a function that can be used for logging.

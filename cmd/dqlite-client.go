@@ -16,7 +16,7 @@ import (
 
 	"github.com/canonical/go-dqlite/client"
 	"github.com/canonical/go-dqlite/driver"
-	"github.com/canonical/go-dqlite/internal/protocol"
+	"github.com/canonical/go-dqlite/protocol"
 	"github.com/spf13/cobra"
 	"golang.org/x/sys/unix"
 )

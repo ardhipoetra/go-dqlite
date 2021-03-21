@@ -12,7 +12,7 @@ import (
 	"github.com/ghodss/yaml"
 	"github.com/pkg/errors"
 
-	"github.com/ardhipoetra/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/protocol"
 	_ "github.com/mattn/go-sqlite3" // Go SQLite bindings
 )
 
