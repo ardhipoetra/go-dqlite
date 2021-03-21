@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/ardhipoetra/go-dqlite/client"
-	"github.com/ardhipoetra/go-dqlitel/bindings"
+	"github.com/ardhipoetra/go-dqlite/bindings"
 	"github.com/pkg/errors"
 )
 
