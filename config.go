@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ardhipoetra/go-dqlite/internal/bindings"
-	"github.com/ardhipoetra/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/bindings"
+	"github.com/ardhipoetra/go-dqlite/protocol"
 	"github.com/pkg/errors"
 )
 

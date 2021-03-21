@@ -78,7 +78,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/ardhipoetra/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/protocol"
 )
 
 type Node C.dqlite_node

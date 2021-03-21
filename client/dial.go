@@ -5,7 +5,7 @@ import (
 	"crypto/tls"
 	"net"
 
-	"github.com/ardhipoetra/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/protocol"
 )
 
 // DefaultDialFunc is the default dial function, which can handle plain TCP and

@@ -3,7 +3,7 @@ package client
 import (
 	"context"
 
-	"github.com/ardhipoetra/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/protocol"
 )
 
 // FindLeader returns a Client connected to the current cluster leader.

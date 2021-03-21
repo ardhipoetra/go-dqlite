@@ -5,7 +5,7 @@ import (
 	"crypto/x509"
 	"fmt"
 
-	"github.com/ardhipoetra/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/protocol"
 )
 
 // SimpleTLSConfig returns a pair of TLS configuration objects with sane

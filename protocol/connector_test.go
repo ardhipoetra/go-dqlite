@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ardhipoetra/go-dqlite/internal/bindings"
-	"github.com/ardhipoetra/go-dqlite/internal/logging"
-	"github.com/ardhipoetra/go-dqlite/internal/protocol"
+	"github.com/ardhipoetra/go-dqlite/bindings"
+	"github.com/ardhipoetra/go-dqlite/logging"
+	"github.com/ardhipoetra/go-dqlite/protocol"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
